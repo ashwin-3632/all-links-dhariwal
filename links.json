@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Inventory Update",
+    "url": "https://example.com/update",
+    "description": "Update SKU stock levels",
+    "category": "Inventory",
+    "roles": ["inventory", "admin"]
+  },
+  {
+    "title": "PoS System",
+    "url": "https://example.com/pos",
+    "description": "Access point-of-sale terminal",
+    "category": "Sales",
+    "roles": ["sales", "admin"]
+  },
+  {
+    "title": "Training Videos",
+    "url": "https://example.com/training",
+    "description": "Watch onboarding & training tutorials",
+    "category": "Training",
+    "roles": ["all"]
+  }
+]

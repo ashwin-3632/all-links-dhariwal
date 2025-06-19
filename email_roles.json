@@ -1,0 +1,5 @@
+{
+  "alice@example.com": "inventory",
+  "bob@example.com": "sales",
+  "manager@example.com": "admin"
+}
