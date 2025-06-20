@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("link-container");
   const searchInput = document.getElementById("search-input");
 
-  const SHEET_URL = "https://script.google.com/macros/s/AKfycbyVSc9Q4EgsWAqgGJ5W9Ei5B_KURuGbkmiQzMNM1Yi3kJLGMFXkmSicY1tm2a5PzmlrPA/exec?sheet=Public_Links";
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbxesreqIBwHRgNcmMeLgXfgiZBSabLTTYqS5NnRU1UJo51dd4DuVoBzgr96deL95UlT/exec?sheet=Public_Links";
 
   let allLinks = [];
 
