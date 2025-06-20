@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("link-container");
 
-  const SHEET_URL = "https://script.google.com/macros/s/AKfycbXYZ123abc456/exec?sheet=Public_Links"; // 🔁 replace with yours
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbyb8vPIP7_Ve9EAzKQ8xxc8ussOnmUpKQCYzbH6uf1tt2kVb38Z_rF4gs4-MNPScSmc/exec?sheet=Public_Links"; // 🔁 replace with yours
 
   try {
     const links = await fetch(SHEET_URL).then(res => res.json());
