@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.getElementById("user-email");
+
   dropdown.addEventListener("change", async () => {
     const email = dropdown.value;
     if (!email) {
@@ -7,23 +8,33 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    try {
-      const roleData = await fetch("email_roles.json").then(res => res.json());
-      const userRole = roleData[email];
+    // ✅ REPLACE THIS with your actual deployed script URL
+    const BASE_URL = "https://script.google.com/macros/s/AKfycbyVSc9Q4EgsWAqgGJ5W9Ei5B_KURuGbkmiQzMNM1Yi3kJLGMFXkmSicY1tm2a5PzmlrPA/exec";
 
-      if (!userRole) {
+    const rolesURL = `${BASE_URL}?sheet=User_Roles`;
+    const linksURL = `${BASE_URL}?sheet=Master_Links`;
+
+    try {
+      const [roleData, links] = await Promise.all([
+        fetch(rolesURL).then(res => res.json()),
+        fetch(linksURL).then(res => res.json())
+      ]);
+
+      const userObj = roleData.find(entry => entry.email === email);
+      if (!userObj) {
         alert("No role assigned to this email.");
         return;
       }
 
-      const links = await fetch("links.json").then(res => res.json());
+      const userRole = userObj.role;
       const filteredLinks = links.filter(link =>
         link.roles.includes(userRole) || link.roles.includes("all")
       );
 
       renderLinks(filteredLinks);
     } catch (err) {
-      console.error("Error loading role or links:", err);
+      console.error("Error loading data:", err);
+      alert("Failed to load links or roles.");
     }
   });
 });
