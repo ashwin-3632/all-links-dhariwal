@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dhariwal Links Hub</title>
+  <title>📌 Dhariwal Central Links</title>
   <script src="script.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="max-w-5xl mx-auto">
-    <h1 class="text-3xl font-bold text-center text-blue-800 mb-6">📌 Dhariwal Central Links</h1>
-    <div id="link-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen p-4 sm:p-6">
+
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-900 mb-6">📌 Dhariwal Central Links</h1>
+
+    <!-- Search box -->
+    <div class="mb-6">
+      <input type="text" id="search-input" placeholder="Search links..." 
+             class="w-full sm:w-1/2 px-4 py-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Link cards container -->
+    <div id="link-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </div>
+
 </body>
 </html>
